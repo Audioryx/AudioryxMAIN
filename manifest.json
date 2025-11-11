@@ -1,0 +1,8 @@
+{
+  "name": "Audioryx",
+  "short_name": "Audioryx",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f0c29",
+  "theme_color": "#00ffcc"
+}
