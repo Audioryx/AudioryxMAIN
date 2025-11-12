@@ -1,2 +1,4 @@
-// Paste your backend API base URL here, e.g. "https://your-api.onrender.com"
-const API_BASE = window.API_BASE || ""; // leave empty for same-origin
+// config.js
+export const EMPLOYEE_EMAIL = "employee@audioryx.com";
+export const EMPLOYEE_PASSWORD = "supersecretpassword";
+export const SECRET = "Secret";
