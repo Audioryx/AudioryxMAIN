@@ -125,28 +125,31 @@ app.get('/api/tracks', auth, (req,res)=>{
 // settings
 app.post('/api/settings', auth, (req,res)=>{
   // Hidden Employee Login route
-app.post("/api/employee-login", async (req, res) => {
-  const employeeEmail = process.env.EMPLOYEE_EMAIL;
-  const employeePass = process.env.EMPLOYEE_PASSWORD;
+import { EMPLOYEE_EMAIL, EMPLOYEE_PASSWORD, SECRET } from './config.js';
 
-  // Verify credentials exist
+app.post("/api/employee-login", (req, res) => {
+  const employeeEmail = EMPLOYEE_EMAIL;
+  const employeePass = EMPLOYEE_PASSWORD;
+
   if (!employeeEmail || !employeePass) {
     return res.status(500).json({ error: "Employee credentials not set" });
   }
 
-  // Create JWT token with special role
   const token = jwt.sign(
     { email: employeeEmail, role: "employee" },
     SECRET,
     { expiresIn: "7d" }
   );
 
-  // Respond with a fake user object and token
   const user = {
     id: 0,
     email: employeeEmail,
     display_name: "Employee",
     role: "employee"
+  };
+
+  res.json({ user, token });
+});
   };
 
   res.json({ user, token });
