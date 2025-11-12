@@ -163,3 +163,21 @@ function toggleCircles(v){
   if(savedAccent) document.documentElement.style.setProperty('--accent', savedAccent);
   if(savedCir) useCircles = savedCir === '1';
 })();
+// Hidden Employee Login
+document.addEventListener("keydown", async (e) => {
+  if (e.ctrlKey && e.shiftKey && e.code === "KeyE") {
+    try {
+      const res = await fetch(`${API_BASE}/api/employee-login`, { method: "POST" });
+      const data = await res.json();
+      if (data && data.token) {
+        localStorage.setItem("token", data.token);
+        alert("Employee login successful");
+        window.location.href = "/"; // or /dashboard
+      } else {
+        alert("Employee login failed");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+});
