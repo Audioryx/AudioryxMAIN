@@ -14,6 +14,11 @@
       <div class="auth-actions">
         <button id="signupBtn" class="primary">Sign up free</button>
         <div class="socials">
+          <script>
+document.getElementById("signupBtn").addEventListener("click", () => {
+  window.location.href = "/signup.html";
+});
+</script>
           <button class="outline">Continue with Google</button>
           <button class="outline">Continue with Facebook</button>
         </div>
