@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Audioryx logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2de07a"/>
+      <stop offset="60%" stop-color="#1ed760"/>
+      <stop offset="100%" stop-color="#0fb24a"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="30%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+      <stop offset="45%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="1024" height="1024" rx="160" fill="#050608"/>
+  <g>
+    <circle cx="512" cy="440" r="360" fill="url(#g1)"/>
+    <circle cx="380" cy="310" r="220" fill="url(#shine)" opacity="0.95"/>
+    <circle cx="512" cy="440" r="360" fill="none" stroke="rgba(0,0,0,0.18)" stroke-width="28"/>
+  </g>
+  <g transform="translate(0,40)">
+    <path d="M360 680 L470 320 L540 320 L650 680 L580 680 L545 560 L475 560 L440 680 Z" fill="#04120a" opacity="0.95"/>
+    <path d="M470 420 L530 420 L500 540 Z" fill="rgba(255,255,255,0.06)"/>
+  </g>
+</svg>
