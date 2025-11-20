@@ -1,0 +1,11 @@
+:root {
+  --ax-green: #1ed760;
+  --ax-green-dark: #0fb24a;
+  --ax-black: #050608;
+  --ax-glass: rgba(255,255,255,0.03);
+  --ax-text: #e9f9f6;
+  --ax-radius: 14px;
+  --ax-blur: 20px;
+}
+.btn-ax { background: linear-gradient(90deg,var(--ax-green),var(--ax-green-dark)); color:#06110a; padding:10px 16px; border-radius:999px; font-weight:700; }
+.glassy { background: var(--ax-glass); backdrop-filter: blur(var(--ax-blur)); border-radius: var(--ax-radius); border:1px solid rgba(255,255,255,0.04); }
