@@ -1,2 +1,2 @@
-// Set API_BASE to your backend URL (e.g. Replit/Railway). Leave empty for same-origin.
-const API_BASE = ""; 
+// Set API_BASE to your deployed backend URL. Leave empty for same-origin.
+const API_BASE = ""; // e.g. "https://audioryx-server.up.railway.app"
